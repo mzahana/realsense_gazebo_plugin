@@ -12,7 +12,7 @@ aluminum peripherial evaluation case.
   <!--File includes-->
   <xacro:include filename="$(find realsense_gazebo_plugin)/urdf/d435.gazebo.xacro"/>
 
-  <xacro:macro name="sensor_d435_gazebo" params="parent name:=camera topics_ns:=camera *origin">
+  <xacro:macro name="sensor_d435_gazebo" params="name:=camera topics_ns:=camera">
     <xacro:property name="M_PI" value="3.1415926535897931" />
   
     <!-- The following values are approximate, and the camera node
@@ -27,7 +27,7 @@ aluminum peripherial evaluation case.
     <xacro:property name="d435_cam_width" value="0.090"/>
     <xacro:property name="d435_cam_height" value="0.025"/>
     <xacro:property name="d435_cam_depth" value="0.02505"/>
-    <xacro:property name="d435_cam_mount_from_center_offset" value="0.0149"/>
+    <xacro:property name="d435_cam_mount_from_center_offset" value="0.0149"/>origin
   
     <!-- The following offset is relative the the physical D435 camera peripherial
   	camera tripod mount -->
@@ -41,11 +41,12 @@ aluminum peripherial evaluation case.
 
 
     <!-- camera body, with origin at bottom screw mount -->
-    <joint name="${name}_joint" type="fixed">
+    <!--joint name="${name}_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}"/>
       <child link="${name}_bottom_screw_frame" />
-    </joint>
+    </joint-->
+
     <link name="${name}_bottom_screw_frame"/>
 
     <joint name="${name}_link_joint" type="fixed">
