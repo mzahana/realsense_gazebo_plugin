@@ -27,7 +27,7 @@
       <origin rpy="1.57079632679 0 1.57079632679" xyz="0.0149 -0.0175 0"/>
       <geometry>
         <!-- <box size="${d435_cam_width} ${d435_cam_height} ${d435_cam_depth}"/> -->
-        <mesh filename="package://realsense2_camera/meshes/d435.dae"/>
+        <mesh filename="package://d435/meshes/d435.dae"/>
         <!--<mesh filename="package://realsense2_camera/meshes/d435/d435.dae" />-->
       </geometry>
       <material name="camera_aluminum"/>
